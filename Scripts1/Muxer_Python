@@ -1,0 +1,5 @@
+import os
+indir = '/home/des/test'
+for root, dirs, filenames in os.walk(indir):
+    for f in filenames:
+        print(f)

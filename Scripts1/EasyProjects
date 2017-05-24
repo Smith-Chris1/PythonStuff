@@ -1,0 +1,16 @@
+import http.client
+
+conn = http.client.HTTPConnection("studiesweekly.go.easyprojects.net")
+
+headers = {
+    'authorization': "Basic Y2hyaXMuc21pdGhAc3R1ZGllc3dlZWtseS5jb206TW92aWVzIzEy",
+    'cache-control': "no-cache",
+    'postman-token': "5b651e76-f0af-8321-9fba-92ed015703eb"
+    }
+
+conn.request("GET", "/rest/v1/projects", headers=headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
